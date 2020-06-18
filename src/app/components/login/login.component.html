@@ -1,0 +1,14 @@
+<div id="loginMain">
+  <form id="loginForm" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="login" mat-dialog-title>Login/E-Mail</label>
+      <input type="text" class="form-control" id="login" formControlName="login" placeholder="Enter Login">
+    </div>
+    <div class="form-group">
+      <label for="password" mat-dialog-title>Hasło</label>
+      <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+    </div>
+    <button type="submit"class="btn btn-primary">Zaloguj się</button>
+  </form>
+</div>
+
