@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'book-item',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookItemComponent implements OnInit {
 
-  constructor() { }
+  public items$: any;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.getAllBooks();
+  }
+
+  getAllBooks(){
+    this.dataService.getAllBooks().subscribe(
+      response => {
+          this.items$ = response;
+      }
+    );
   }
 
 }

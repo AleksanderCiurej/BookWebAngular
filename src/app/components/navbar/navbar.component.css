@@ -1,0 +1,33 @@
+nav{
+  background-color: black;
+  color:white;
+  text-decoration: none;
+  font-family: Bahnschrift;
+  padding: 10px 0px;
+  height: 5vh;
+}
+li{
+  width: 20%;
+  text-align: center;
+}
+a{
+  color:white;
+}
+
+a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width .8s;
+}
+
+a:hover::after{
+  width: 100%;
+  transition: width .8s;
+}
+
+.nav-link{
+  cursor: pointer;
+}
