@@ -14,6 +14,30 @@ export class AuthService {
   constructor(private http: HttpClient) {
   }
 
+  getAllUsers(){
+    return this.http.get(this.url + 'api/users');
+  }
+
+  getUserById(id){
+    return this.http.get(this.url + 'api/users/' + id);
+  }
+
+  addUser(user){
+    return this.http.post(`${this.url}api/users/create`, user);
+  }
+
+  getUserByEmail(email){
+    return this.http.get(this.url + 'api/users/email/' + email);
+  }
+
+  deleteUser(id){
+    return this.http.delete(`${this.url}api/users/id/` + id);
+  }
+
+  banUser(id){
+    return this.http.post(`${this.url}api/userBan/`, id);
+  }
+
   authenticate(credentials){
     return this.http.post(this.url + 'auth', {
       login: credentials.login,
@@ -30,12 +54,7 @@ export class AuthService {
   }
 
   logout() {
-    return this.http.delete(this.url + '/auth' + this.currentUser.userId)
-      .pipe(
-        map(() => {
-          localStorage.removeItem('token');
-        })
-      );
+    localStorage.removeItem('token');
   }
 
   isLoggedIn() {

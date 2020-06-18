@@ -27,29 +27,4 @@ export class DataService {
   deleteBook(id){
     return this.http.delete(`${this.url}api/books/` + id);
   }
-
-  getAllUsers(){
-    return this.http.get(this.url + 'api/users');
-  }
-
-  getUserById(id){
-    return this.http.get(this.url + 'api/users/' + id);
-  }
-
-  addUser(user){
-    return this.http.post(`${this.url}api/users/create`, user);
-  }
-
-  getUserByEmail(email){
-    return this.http.get(this.url + 'api/users/email/' + email);
-  }
-
-  deleteUser(id){
-    return this.http.delete(`${this.url}api/users/id/` + id);
-  }
-
-  banUser(id){
-    return this.http.post(`${this.url}api/userBan/`, id);
-  }
-
 }

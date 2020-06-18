@@ -10,7 +10,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { BookItemComponent } from './components/book-item/book-item.component';
 import { BookItemDetailComponent } from './components/book-item-detail/book-item-detail.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
@@ -28,7 +28,8 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

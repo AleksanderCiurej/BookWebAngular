@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'signup',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  public credentials = {
+    name: '',
+    surname: '',
+    email: '',
+    password: '',
+    admin: false
+  };
 
-  ngOnInit(): void {
+  constructor(private authService: AuthService) {
   }
+
+  ngOnInit() {
+  }
+
+  create() {
+    this.authService.addUser(this.credentials).subscribe((result) => {
+      return result;
+    });
+  }
+
 
 }
