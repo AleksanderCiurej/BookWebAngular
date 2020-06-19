@@ -1,7 +1,7 @@
 .signup{
-  padding: 20vh 25vw;
+  padding: 20vh 30vw;
   background-image: url("src/assets/images/library.jpg");
-  height: 95vh;
+  height: calc(100vh - 50px);
   color: white;
 }
 

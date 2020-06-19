@@ -8,18 +8,14 @@ import {DataService} from '../../services/data.service';
 })
 export class BookItemComponent implements OnInit {
 
-  public items$: any;
+  public books: any;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.getAllBooks();
-  }
-
-  getAllBooks(){
     this.dataService.getAllBooks().subscribe(
       response => {
-          this.items$ = response;
+        this.books = response;
       }
     );
   }

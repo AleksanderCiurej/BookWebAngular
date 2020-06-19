@@ -1,18 +1,13 @@
 #loginMain{
   padding: 20vh 30vw;
   background-image: url("src/assets/images/library.jpg");
-  height: 95vh;
+  height: calc(100vh - 50px);
   color: white;
-}
-#login,#password{
-  width: 500px;
 }
 
 #form{
   background: black;
   border: 1px solid white;
   border-radius: 12px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 16%
+  padding: 50px 16%;
 }
