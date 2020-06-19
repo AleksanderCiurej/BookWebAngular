@@ -1,3 +1,6 @@
 <div>
-  <book-item></book-item>
+
+  <div *ngFor="let book of books">
+    <book-item [book]="book"></book-item>
+  </div>
 </div>

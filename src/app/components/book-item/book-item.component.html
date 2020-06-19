@@ -1,5 +1,5 @@
-<div *ngFor="let book of books">
-  <p>
-    {{book}}
-  </p>
+<div>
+  <h1>{{book.title}}</h1>
+  <p>{{book.author}} {{book.publisher}}</p>
+  <img [src]="book.cover" alt="Book Cover img">
 </div>
