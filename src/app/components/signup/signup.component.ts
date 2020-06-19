@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../services/auth.service";
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../services/auth.service';
+import {Md5} from 'ts-md5';
 
 @Component({
   selector: 'signup',
@@ -23,6 +24,7 @@ export class SignupComponent implements OnInit {
   }
 
   create() {
+    this.credentials.password = Md5.hashStr(this.credentials.password) as string;
     this.authService.addUser(this.credentials).subscribe((result) => {
       return result;
     });

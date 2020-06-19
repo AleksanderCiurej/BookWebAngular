@@ -9,7 +9,7 @@ import {Book} from '../../models/book';
 })
 export class HomeComponent implements OnInit {
 
-  public books: Book[];
+  books: Book[];
 
   constructor(private dataService: DataService) { }
 

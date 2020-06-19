@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {JwtHelper} from 'angular2-jwt';
 import {Token} from '../models/token';
+import {Md5} from 'ts-md5';
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +42,7 @@ export class AuthService {
   authenticate(credentials){
     return this.http.post(this.url + 'auth', {
       login: credentials.login,
-      password: credentials.password
+      password: Md5.hashStr(credentials.password) as string
     }).pipe(
       map((result: Token) => {
         if (result && result.token) {
