@@ -1,3 +1,8 @@
 div#main{
-  height: 95vh;
+  background: sandybrown;
 }
+#row{
+  padding-top: 3%;
+  padding-bottom: 2%;
+}
+
