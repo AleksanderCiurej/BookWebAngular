@@ -1,1 +1,37 @@
-<p>book-item-detail works!</p>
+<div>
+  <div>
+    <h1>
+      {{book.title}}
+    </h1>
+    <img [src]="book.cover" alt="Book cover image">
+    <div>
+      <p>
+        {{book.author}}
+        {{book.year}}
+        {{book.publisher}}
+      </p>
+    </div>
+
+  </div>
+  <div *ngIf="auth.isLoggedIn()">
+    <div>
+      <h2>komentarze</h2>
+
+      <div *ngFor="let comment of comments">
+        <app-comment></app-comment>
+      </div>
+
+    </div>
+    <div>
+      <h2>Recenzje</h2>
+
+      <div *ngFor="let review of reviews">
+        <app-review></app-review>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!auth.isLoggedIn()">>
+    <p>Zaloguj sie aby widziec komentarze i rencejze</p>
+    <a [routerLink]="['/login']">Zaloguj sie!</a>
+  </div>
+</div>

@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
     this.dataService.getAllBooks().subscribe(
       response => {
         this.books = response as Book[];
-        console.log(this.books);
       }
     );
 

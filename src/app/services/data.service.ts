@@ -25,4 +25,12 @@ export class DataService {
   deleteBook(id){
     return this.http.delete(`${this.url}api/books/` + id);
   }
+
+  getCommentsForBookId(id: number){
+    return this.http.get(this.url + 'api/comments/book/' + id);
+  }
+
+  getReviewForBookId(id: number){
+    return this.http.get(`${this.url}api/reviews/book/${id}`);
+  }
 }

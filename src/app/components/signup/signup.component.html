@@ -18,6 +18,7 @@
           </div>
         </div>
         <div class="col-md-8 col-sm-9">
+          <label *ngIf="shouldShowError">Niepoprawny email lub dane</label>
           <label>Podaj Email</label>
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>

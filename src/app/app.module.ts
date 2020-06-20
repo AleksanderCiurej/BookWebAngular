@@ -13,6 +13,8 @@ import {BookItemDetailComponent} from './components/book-item-detail/book-item-d
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './services/auth.interceptor';
+import { CommentComponent } from './components/comment/comment.component';
+import { ReviewComponent } from './components/review/review.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {AuthInterceptor} from './services/auth.interceptor';
     SignupComponent,
     AddBookComponent,
     BookItemComponent,
-    BookItemDetailComponent
+    BookItemDetailComponent,
+    CommentComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
