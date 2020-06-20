@@ -1,1 +1,37 @@
-<p>add-book works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4 col-sm-4 col-md-4">
+      <div id="image">
+        <img src="../../../assets/images/book.png" class="card-img-top">
+      </div>
+    </div>
+    <div class="col-lg-8 col-sm-8 col-md-8">
+      <div style="margin-right: 20%; margin-top: 20%;">
+        <h5 style="text-align: center;font-size: 50px;">Formularz dodawania książki:</h5>
+        <form>
+          <div class="form-group">
+            <label for="inputTitle">Tytuł</label>
+            <input type="text" class="form-control" id="inputTitle" placeholder="Podaj tytuł" formControlName="title">
+          </div>
+          <div class="form-group">
+            <label for="inputAuthor">Podaj autora:</label>
+            <input type="text" class="form-control" id="inputAuthor" placeholder="Podaj autora" formControlName="author">
+          </div>
+          <div class="form-group">
+            <label for="inputYear">Rok wydania:</label>
+            <input type="email" class="form-control" id="inputYear" aria-describedby="emailHelp" placeholder="Podaj rok wydania" formControlName="year">
+          </div>
+          <div class="form-group">
+            <label for="inputPublisher">Wydawca</label>
+            <input type="password" class="form-control" id="inputPublisher" placeholder="Podaj wydawce" formControlName="publisher">
+          </div>
+          <div class="form-group">
+            <label for="inputCover">Link do okładki</label>
+            <input type="password" class="form-control" id="inputCover" placeholder="Link do okładki" formControlName="link">
+          </div>
+          <button type="submit" class="btn btn-primary">Dodaj książke</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

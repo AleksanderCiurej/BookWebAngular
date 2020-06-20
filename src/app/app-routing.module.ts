@@ -6,6 +6,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {BookItemDetailComponent} from './components/book-item-detail/book-item-detail.component';
 import {UserProfileComponent} from "./components/user-profile/user-profile.component";
 import {AuthGuard} from "./services/auth.guard";
+import {AddBookComponent} from "./components/add-book/add-book.component";
 
 
 const routes: Routes = [
@@ -28,6 +29,11 @@ const routes: Routes = [
   {
     path: 'user',
     component: UserProfileComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'addBook',
+    component: AddBookComponent,
     canActivate: [AuthGuard]
   }
 ];
