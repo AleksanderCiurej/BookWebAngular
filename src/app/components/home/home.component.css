@@ -1,8 +1,83 @@
 div#main{
-  background: sandybrown;
+  font-family: "Noto Sans";
+  background: rgb(242,244,246);
 }
 #row{
   padding-top: 3%;
   padding-bottom: 2%;
 }
+#logo{
+  padding: 5% 15%;
+  background: white;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+h5.logo{
+  font-size: 50px;
+  font-family: Armata;
+}
 
+h5.book {
+  text-align: center;
+  font-size: 50px;
+  padding: 3% 0%;
+}
+
+@font-face {
+  font-family: Armata;
+  src: url("src/assets/fonts/aa.ttf");
+}
+
+button#scroll{
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e62739;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button#scroll:active{
+  background: #cc2333;
+}
+
+div.topLogo{
+  padding: 10% 0%;
+}
+
+div.topSearch{
+  margin: 10% 0%;
+  background: white;
+  border-radius: 40px;
+  border: 1px solid black;
+  padding: 25px;
+  width: 400px;
+}
+
+.search-button{
+  color: black;
+  float: right;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.search-text{
+  text-decoration: none;
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: black;
+  font-size: 22px;
+  transition: 0.4s;
+}

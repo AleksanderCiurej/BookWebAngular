@@ -1,0 +1,36 @@
+img{
+  height: 600px;
+  width: 400px;
+  transition: 0.5s;
+}
+img:hover{
+  height: 650px;
+  width: 450px;
+  transition: 0.5s;
+}
+
+.bookInfo{
+  font-size: 30px;
+}
+
+.notLogged{
+  text-align: center;
+  font-size: 60px;
+  color: #e62739;
+  padding-top: 2%;
+}
+
+a{
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#Logged{
+  padding-top: 5%;
+  margin-bottom: 5%;
+}
+
+.sectionCommentsReviews{
+  border: 1px solid black;
+  padding: 2%;
+}

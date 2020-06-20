@@ -1,9 +1,29 @@
 <div id="main">
   <div class="container-fluid">
+    <div class="row" style="border-bottom: 1px solid black;">
+      <div class="col-lg-6 d-flex justify-content-around">
+          <div class="topLogo">
+            <h5 class="logo"><i class="fa fa-book" aria-hidden="true"></i>BookWeb</h5>
+          </div>
+      </div>
+      <div class="col-lg-6 d-flex justify-content-around">
+        <div class="topSearch">
+          <input type="text" placeholder="Wyszukaj książkę" class="search-text">
+          <a href="#" class="search-button">
+            <i class="fa fa-search"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <h5 class="book">Wszystkie książki:</h5>
     <div class="row">
-        <div *ngFor="let book of books" class="col-lg-3 d-flex justify-content-around" id="row">
+        <div *ngFor="let book of books" class="col-lg-4 d-flex justify-content-around" id="row">
             <book-item [book]="book"></book-item>
       </div>
     </div>
   </div>
+  <button id="scroll" (click)="scrollToTop()"><i class="fa fa-arrow-up" aria-hidden="true"></i>
+  </button>
 </div>

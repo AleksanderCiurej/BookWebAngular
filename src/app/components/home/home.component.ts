@@ -19,7 +19,18 @@ export class HomeComponent implements OnInit {
         this.books = response as Book[];
       }
     );
+    this.scrollToTop();
+  }
 
+  scrollToTop(){
+    const button = document.querySelector('#scroll');
+    button.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    });
   }
 
 }

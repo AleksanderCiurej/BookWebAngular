@@ -1,37 +1,78 @@
-<div>
+<div class="container-fluid" style="padding-top: 100px; font-family: 'Noto Sans'">
+  <div class="row">
+    <div class="col-lg-5 d-flex justify-content-around">
+      <img [src]="book.cover" alt="Image" class="card-img-top" onerror="this.onerror=null; this.src='assets/images/default_book_cover.jpg'">
+    </div>
+    <div class="col-lg-7">
+      <h5 class="card-title" style="font-size: 60px">
+        {{book.title}}
+      </h5>
+      <div class="bookInfo">
+        <p class="card-text">Autor książki: {{book.author}}</p>
+        <p class="card-text">Wydawca: {{book.publisher}}</p>
+        <p class="card-text">Rok wydania: {{book.year}}</p>
+      </div>
+    </div>
+  </div>
   <div>
-    <h1>
-      {{book.title}}
-    </h1>
-    <img [src]="book.cover" alt="Book cover image">
-    <div>
-      <p>
-        {{book.author}}
-        {{book.year}}
-        {{book.publisher}}
-      </p>
-    </div>
-
   </div>
-  <div *ngIf="auth.isLoggedIn()">
-    <div>
-      <h2>komentarze</h2>
-
-      <div *ngFor="let comment of comments">
-        <app-comment [comment]="comment"></app-comment>
+  <div *ngIf="auth.isLoggedIn()" class="container-fluid" id="Logged">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="sectionCommentsReviews">
+          <h5 style="text-align: center">Recenzja książki:</h5>
+          <div class="row bootstrap snippets">
+            <div class="col-md-12">
+              <div class="comment-wrapper">
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    Panel recenzji
+                  </div>
+                  <div class="panel-body">
+                    <textarea class="form-control" placeholder="Napisz recenzję..." rows="3"></textarea>
+                    <br>
+                    <button type="button" class="btn btn-info pull-right">Dodaj recenzje</button>
+                    <div class="clearfix"></div>
+                    <hr>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngFor="let review of reviews">
+            <app-review [review]="review"></app-review>
+          </div>
+        </div>
       </div>
-
-    </div>
-    <div>
-      <h2>Recenzje</h2>
-
-      <div *ngFor="let review of reviews">
-        <app-review [review]="review"></app-review>
+      <div class="col-lg-6">
+        <div class="sectionCommentsReviews">
+          <h5 style="text-align: center">Sekcja komentarzy: </h5>
+          <div class="row bootstrap snippets">
+            <div class="col-md-12">
+              <div class="comment-wrapper">
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    Panel komentarzy
+                  </div>
+                  <div class="panel-body">
+                    <textarea class="form-control" placeholder="Napisz komentarz..." rows="3"></textarea>
+                    <br>
+                    <button type="button" class="btn btn-info pull-right">Dodaj komentarz</button>
+                    <div class="clearfix"></div>
+                    <hr>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngFor="let comment of comments">
+            <app-comment [comment]="comment"></app-comment>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div *ngIf="!auth.isLoggedIn()">>
-    <p>Zaloguj sie aby widziec komentarze i rencejze</p>
-    <a [routerLink]="['/login']">Zaloguj sie!</a>
+  <div *ngIf="!auth.isLoggedIn()" class="notLogged">
+    <p><a [routerLink]="['/login']">Zaloguj się </a>aby widzieć komentarze i recenzje</p>
   </div>
 </div>
