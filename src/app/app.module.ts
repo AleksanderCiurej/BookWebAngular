@@ -27,7 +27,7 @@ import { ReviewComponent } from './components/review/review.component';
     BookItemComponent,
     BookItemDetailComponent,
     CommentComponent,
-    ReviewComponent
+    ReviewComponent,
   ],
   imports: [
     BrowserModule,
