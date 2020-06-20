@@ -13,8 +13,8 @@
       <li class="nav-item" *ngIf="!authService.isLoggedIn()">
         <a href="" class="nav-link" [routerLink]="['/signup']">Zarejestruj</a>
       </li>
-      <li *ngIf="authService.isLoggedIn()">
-        <a [routerLink]="['/user']" class="profileIcon"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+      <li *ngIf="authService.isLoggedIn()" class="d-flex justify-content-around" id="icon">
+        <p>Twój profil<br><a [routerLink]="['/user']" class="profileIcon"><i class="fa fa-user-circle" aria-hidden="true"></i></a></p>
       </li>
     </ul>
   </nav>
