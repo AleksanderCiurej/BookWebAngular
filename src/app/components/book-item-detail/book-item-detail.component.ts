@@ -37,12 +37,10 @@ export class BookItemDetailComponent implements OnInit {
     }
     this.dataService.getCommentsForBookId(this.id).subscribe(data => {
       this.comments = data as Comment[];
-      console.log('comments: ', this.comments);
     });
 
     this.dataService.getReviewForBookId(this.id).subscribe(data => {
       this.reviews = data as Review[];
-      console.log('reviews: ', this.reviews);
     });
   }
 

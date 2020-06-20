@@ -18,7 +18,7 @@
       <h2>komentarze</h2>
 
       <div *ngFor="let comment of comments">
-        <app-comment></app-comment>
+        <app-comment [comment]="comment"></app-comment>
       </div>
 
     </div>
@@ -26,7 +26,7 @@
       <h2>Recenzje</h2>
 
       <div *ngFor="let review of reviews">
-        <app-review></app-review>
+        <app-review [review]="review"></app-review>
       </div>
     </div>
   </div>

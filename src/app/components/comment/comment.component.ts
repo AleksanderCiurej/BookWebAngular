@@ -10,13 +10,15 @@ import {AuthService} from '../../services/auth.service';
 export class CommentComponent implements OnInit {
 
   @Input() comment: Comment;
-  user: User;
+  user = {
+    name: '', surname: '', email: '', admin: false, userId: -1, password: ''
+  };
   constructor(private userService: AuthService) { }
 
   ngOnInit(): void {
     this.userService.getUserById(this.comment.userId).subscribe(data => {
       this.user = data as User;
-    })
+    });
   }
 
 }
