@@ -14,7 +14,7 @@ a{
   color:white;
 }
 
-a::after {
+a.nav-link::after {
   content: '';
   display: block;
   width: 0;
@@ -30,4 +30,14 @@ a:hover::after{
 
 .nav-link{
   cursor: pointer;
+}
+
+i{
+  font-size: 35px;
+}
+
+a.profileIcon{
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
 }

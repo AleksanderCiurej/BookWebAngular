@@ -4,6 +4,7 @@ import {HomeComponent} from "./components/home/home.component";
 import {SignupComponent} from "./components/signup/signup.component";
 import {LoginComponent} from "./components/login/login.component";
 import {BookItemDetailComponent} from './components/book-item-detail/book-item-detail.component';
+import {UserProfileComponent} from "./components/user-profile/user-profile.component";
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'book/:id',
     component: BookItemDetailComponent
+  },
+  {
+    path: 'user',
+    component: UserProfileComponent
   }
 ];
 

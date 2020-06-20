@@ -15,6 +15,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './services/auth.interceptor';
 import { CommentComponent } from './components/comment/comment.component';
 import { ReviewComponent } from './components/review/review.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ReviewComponent } from './components/review/review.component';
     BookItemComponent,
     BookItemDetailComponent,
     CommentComponent,
-    ReviewComponent
+    ReviewComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

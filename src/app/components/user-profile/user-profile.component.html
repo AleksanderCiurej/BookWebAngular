@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-sm-6 col-md-6">
+      <div id="image">
+          <img src="../../../assets/images/user.jpg" class="card-img-top">
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-6 col-md-6">
+      <div style="margin-right: 30%; margin-top: 20%;">
+        <h5 style="text-align: center;font-size: 50px;">Zmień swoje dane:</h5>
+        <form>
+          <div class="form-group">
+            <label for="inputName">Imię:</label>
+            <input type="text" class="form-control" id="inputName" placeholder="{{user.name}}">
+          </div>
+          <div class="form-group">
+            <label for="inputSurname">Nazwisko:</label>
+            <input type="text" class="form-control" id="inputSurname" placeholder="{{user.surname}}">
+          </div>
+          <div class="form-group">
+            <label for="inputEmail">Email address:</label>
+            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="{{user.email}}">
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Password:</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
