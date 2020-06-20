@@ -5,6 +5,7 @@ import {SignupComponent} from "./components/signup/signup.component";
 import {LoginComponent} from "./components/login/login.component";
 import {BookItemDetailComponent} from './components/book-item-detail/book-item-detail.component';
 import {UserProfileComponent} from "./components/user-profile/user-profile.component";
+import {AuthGuard} from "./services/auth.guard";
 
 
 const routes: Routes = [
@@ -14,11 +15,11 @@ const routes: Routes = [
   },
   {
     path: 'signup',
-    component: SignupComponent
+    component: SignupComponent,
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'book/:id',
@@ -26,7 +27,8 @@ const routes: Routes = [
   },
   {
     path: 'user',
-    component: UserProfileComponent
+    component: UserProfileComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
