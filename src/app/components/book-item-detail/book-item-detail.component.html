@@ -29,9 +29,9 @@
                     Panel recenzji
                   </div>
                   <div class="panel-body">
-                    <textarea class="form-control" placeholder="Napisz recenzję..." rows="3"></textarea>
+                    <textarea id="textAreaReview" class="form-control" placeholder="Napisz recenzję..." rows="3"></textarea>
                     <br>
-                    <button type="button" class="btn btn-info pull-right">Dodaj recenzje</button>
+                    <button (click)="onReviewAdded()" type="button" class="btn btn-info pull-right">Dodaj recenzje</button>
                     <div class="clearfix"></div>
                     <hr>
                   </div>
@@ -55,9 +55,9 @@
                     Panel komentarzy
                   </div>
                   <div class="panel-body">
-                    <textarea class="form-control" placeholder="Napisz komentarz..." rows="3"></textarea>
+                    <textarea id="textAreaComment" class="form-control" placeholder="Napisz komentarz..." rows="3"></textarea>
                     <br>
-                    <button type="button" class="btn btn-info pull-right">Dodaj komentarz</button>
+                    <button type="button" (click)="onCommentAdded()" class="btn btn-info pull-right">Dodaj komentarz</button>
                     <div class="clearfix"></div>
                     <hr>
                   </div>

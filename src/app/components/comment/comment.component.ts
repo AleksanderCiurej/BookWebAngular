@@ -13,6 +13,7 @@ export class CommentComponent implements OnInit {
   user = {
     name: '', surname: '', email: '', admin: false, userId: -1, password: ''
   };
+
   constructor(private userService: AuthService) { }
 
   ngOnInit(): void {
