@@ -4,6 +4,7 @@ import {map} from 'rxjs/operators';
 import {JwtHelper} from 'angular2-jwt';
 import {Token} from '../models/token';
 import {Md5} from 'ts-md5';
+import {CreateUser, User} from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,10 @@ export class AuthService {
 
   banUser(id){
     return this.http.post(`${this.url}api/userBan/`, id);
+  }
+
+  updateUser(createUser: User){
+    return this.http.put(`${this.url}api/users/update`, createUser);
   }
 
   authenticate(credentials){

@@ -8,24 +8,27 @@
     <div class="col-lg-6 col-sm-6 col-md-6">
       <div style="margin-right: 30%; margin-top: 20%;">
         <h5 style="text-align: center;font-size: 50px;">Zmień swoje dane:</h5>
-        <form>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="inputName">Imię:</label>
-            <input type="text" class="form-control" id="inputName" placeholder="{{user.name}}">
+            <input type="text" class="form-control" id="inputName" placeholder="{{user.name}}" formControlName="name">
           </div>
           <div class="form-group">
             <label for="inputSurname">Nazwisko:</label>
-            <input type="text" class="form-control" id="inputSurname" placeholder="{{user.surname}}">
+            <input type="text" class="form-control" id="inputSurname" placeholder="{{user.surname}}" formControlName="surname">
+          </div>
+          <div *ngIf="checkEmail.errors?.email">
+            Primary Email not valid.
           </div>
           <div class="form-group">
             <label for="inputEmail">Email address:</label>
-            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="{{user.email}}">
+            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="{{user.email}}" formControlName="email">
           </div>
           <div class="form-group">
             <label for="inputPassword">Password:</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" formControlName="password">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>
