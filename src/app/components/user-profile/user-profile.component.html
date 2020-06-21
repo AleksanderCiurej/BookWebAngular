@@ -17,13 +17,6 @@
             <label for="inputSurname">Nazwisko:</label>
             <input type="text" class="form-control" id="inputSurname" placeholder="{{user.surname}}" formControlName="surname">
           </div>
-          <div *ngIf="checkEmail.errors?.email">
-            Primary Email not valid.
-          </div>
-          <div class="form-group">
-            <label for="inputEmail">Email address:</label>
-            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="{{user.email}}" formControlName="email">
-          </div>
           <div class="form-group">
             <label for="inputPassword">Password:</label>
             <input type="password" class="form-control" id="inputPassword" placeholder="Password" formControlName="password">

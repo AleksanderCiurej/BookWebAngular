@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {DataService} from '../../services/data.service';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
-import {CreateUser, User} from '../../models/user';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {User} from '../../models/user';
+import {FormControl, FormGroup} from '@angular/forms';
+import {Md5} from 'ts-md5';
 
 @Component({
   selector: 'app-user-profile',
@@ -15,7 +15,6 @@ export class UserProfileComponent implements OnInit {
     {
       name: new FormControl(''),
       surname: new FormControl(''),
-      email: new FormControl('', Validators.email),
       password: new FormControl(''),
     }
   );
@@ -35,13 +34,12 @@ export class UserProfileComponent implements OnInit {
       {
         this.user = data as User;
       }
-    ,error => console.log(error));
+    , error => console.log(error));
   }
 
   onSubmit() {
     const name = this.myForm.controls.name.value.trim();
     const surname = this.myForm.controls.surname.value.trim();
-    const email = this.myForm.controls.email.value.trim();
     const password = this.myForm.controls.password.value.trim();
 
     const createUser: User = {
@@ -53,7 +51,7 @@ export class UserProfileComponent implements OnInit {
       surname: this.user.surname
     };
 
-    if (name === '' && surname === '' && email === '' && password === '') {
+    if (name === '' && surname === '' && password === '') {
       return;
     }else{
       if (name !== ''){
@@ -64,12 +62,8 @@ export class UserProfileComponent implements OnInit {
         createUser.surname = surname;
         this.myForm.controls.surname.setValue('');
       }
-      if (email !== ''){
-        createUser.email = email;
-        this.myForm.controls.email.setValue('');
-      }
       if (password !== ''){
-        createUser.password = password;
+        createUser.password = Md5.hashStr(password) as string;
         this.myForm.controls.password.setValue('');
       }
     }
@@ -77,12 +71,8 @@ export class UserProfileComponent implements OnInit {
     this.authService.updateUser(createUser).subscribe(data => {
       this.authService.getUserById(createUser.userId).subscribe(data => {
         this.user = data as User;
-      }, error => console.log(error))
+      }, error => console.log(error));
     }, error => console.log(error));
 
-  }
-
-  get checkEmail(){
-    return this.myForm.get('email');
   }
 }
