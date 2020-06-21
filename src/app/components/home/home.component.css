@@ -81,3 +81,20 @@ div.topSearch{
   font-size: 22px;
   transition: 0.4s;
 }
+
+a.addBookButton{
+  padding: 12px 36px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  background: linear-gradient(90deg,#cc2333,#e62739);
+}
+
+div#button{
+  padding-top: 10%;
+  float: right;
+  margin-left: 10%;
+}

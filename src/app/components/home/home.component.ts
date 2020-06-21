@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '../../services/data.service';
 import {Book} from '../../models/book';
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'home',
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   books: Book[];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.dataService.getAllBooks().subscribe(
