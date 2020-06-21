@@ -68,9 +68,10 @@ export class UserProfileComponent implements OnInit {
       }
     }
 
-    this.authService.updateUser(createUser).subscribe(data => {
+    this.authService.updateUser(createUser).subscribe(response => {
       this.authService.getUserById(createUser.userId).subscribe(data => {
         this.user = data as User;
+        document.getElementById('changeSucess').style.display = 'block';
       }, error => console.log(error));
     }, error => console.log(error));
 

@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '../../services/data.service';
 import {Book} from '../../models/book';
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from '../../services/auth.service';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'home',
@@ -11,16 +12,21 @@ import {AuthService} from "../../services/auth.service";
 export class HomeComponent implements OnInit {
 
   books: Book[];
+  admin = false;
 
   constructor(private dataService: DataService, public authService: AuthService) { }
 
   ngOnInit(): void {
-    this.dataService.getAllBooks().subscribe(
-      response => {
-        this.books = response as Book[];
-      }
-    );
+    this.getAllBooks();
     this.scrollToTop();
+    if (this.authService.isLoggedIn()){
+      this.authService.getUserByEmail(this.authService.currentUser.sub).subscribe(
+        data => {
+          const user = data as User;
+          this.admin = user.admin;
+        }
+      );
+    }
   }
 
   scrollToTop(){
@@ -34,4 +40,23 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  searchBook($event: Event) {
+    if ((($event.target as HTMLInputElement).value) === ''){
+      this.getAllBooks();
+    }else{
+      this.dataService.searchBook(($event.target as HTMLInputElement).value).subscribe(
+        data => {
+          this.books = data as Book[];
+        }
+      );
+    }
+  }
+
+  getAllBooks(){
+    this.dataService.getAllBooks().subscribe(
+      response => {
+        this.books = response as Book[];
+      }
+    );
+  }
 }

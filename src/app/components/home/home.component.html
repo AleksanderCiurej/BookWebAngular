@@ -8,20 +8,17 @@
       </div>
       <div class="col-lg-6 d-flex justify-content-around">
         <div class="topSearch">
-          <input type="text" placeholder="Wyszukaj książkę" class="search-text">
-          <a href="#" class="search-button">
-            <i class="fa fa-search"></i>
-          </a>
+          <input type="text" placeholder="Wyszukaj książkę" class="search-text" (keyup)="searchBook($event)">
         </div>
       </div>
     </div>
   </div>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-10">
+      <div class="col-lg-8">
         <h5 class="book">Wszystkie książki:</h5>
       </div>
-      <div class="col-lg-2" *ngIf="authService.isLoggedIn()">
+      <div class="col-lg-4" *ngIf="authService.isLoggedIn()">
         <div id="button">
           <a href="#" class="addBookButton" [routerLink]="['/addBook']">Dodaj książke</a>
         </div>
@@ -29,7 +26,7 @@
     </div>
     <div class="row">
         <div *ngFor="let book of books" class="col-lg-4 d-flex justify-content-around" id="row">
-            <book-item [book]="book"></book-item>
+            <book-item [book]="book" [isAdmin]="this.admin" (getBooks)="getAllBooks()"></book-item>
       </div>
     </div>
   </div>

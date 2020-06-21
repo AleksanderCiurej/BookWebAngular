@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Book} from '../../models/book';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'book-item',
@@ -7,14 +8,20 @@ import {Book} from '../../models/book';
   styleUrls: ['./book-item.component.css']
 })
 export class BookItemComponent implements OnInit {
-
   @Input() book: Book;
-
-
-  constructor() { }
+  @Input() isAdmin: boolean;
+  @Output() getBooks = new EventEmitter<boolean>();
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
 
   }
 
+  deleteBook() {
+    this.dataService.deleteBook(this.book.bookId).subscribe(
+      data => {
+        this.getBooks.emit(true);
+      }
+    );
+  }
 }

@@ -43,4 +43,8 @@ export class DataService {
   createReview(review: CreateReview){
     return this.http.post(`${this.url}api/reviews`, review);
   }
+
+  searchBook(book: string){
+    return this.http.get(this.url + 'api/searchBook/' + book);
+  }
 }

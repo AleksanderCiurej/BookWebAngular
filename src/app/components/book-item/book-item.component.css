@@ -1,3 +1,13 @@
 img{
   height: 400px;
 }
+
+#exitButton{
+  float: right;
+  font-size: 40px;
+  color: black;
+}
+
+#exitButton:active{
+  color: red;
+}

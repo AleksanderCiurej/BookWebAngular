@@ -5,5 +5,6 @@
     <p class="card-text">Autor: {{book.author}}</p>
     <p class="card-text">Wydawca: {{book.publisher}}</p>
     <a [routerLink]="['book',book.bookId]" [state]="{data: book}" class="btn btn-primary">Więcej o książce</a>
+    <i class="fa fa-times" aria-hidden="true" id="exitButton" *ngIf="isAdmin" type="button" (click)="deleteBook()"></i>
   </div>
 </div>
